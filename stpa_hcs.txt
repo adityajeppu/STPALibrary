@@ -1,0 +1,111 @@
+MOOSE : Matlab Tool for STPA Evaluation
+ 
+Report created on : 09-Oct-2022 18:27:38
+ 
+Responsibility  |Not providing causes hazard |Providing causes hazard |Too early, too late, out of order |Stopped too soon, applied too long 
+Responsible Block : Crew 1| | | |
+Pilot provides brake pedals|[#H2]Not providing braking on ground  | [#H4] Providing brake in air | [#H2] Providing brake too late on ground | [#H2] Stopping brake too soon
+Pilot arms spoiler and reverse thrust|[#H2] Not arming external system | [#H6] | [#H2] Arms on ground | [#H2] Stops the arming process
+Pilot provides steering commands|[#H51] Not providing steering | [#H51] Providing steering when not required | [#H51] Providing steering when aircraft has already gone off runway | [#H51] Providing steering for a long duration cause deviation
+Pilot provides parking/emergency brakes|[#H2] Not providing emergency brake when brakes fail | [#H4] Providing emergency brake when brakes are okay - wet runway | [#H2] Appying emergency brake brakes when runway wet cause skid | [#H5, #H6] Applied emergency brake too long
+Responsible Block : Crew 2| | | |
+CO Pilot provides brake pedals|[#H2]Not providing braking on ground  | [#H4] Providing brake in air | [#H2] Providing brake too late on ground | [#H2] Stopping brake too soon
+CO Pilot arms spoiler and reverse thrust|[#H2] Not arming external system | [#H4] | [#H2] Arms on ground | [#H2] Stops the arming process
+CO Pilot provides steering commands|[#H51] Not providing steering | [#H51] Providing steering when not required | [#H51] Providing steering when aircraft has already gone off runway | [#H51] Providing steering for a long duration cause deviation
+CO Pilot provides parking/emergency brakes|[#H2] Not providing emergency brake when brakes fail | [#H4] Providing emergency brake when brakes are okay - wet runway | [#H2] Appying emergency brake brakes when runway wet cause skid | [#H5, #H6] Applied emergency brake too long
+Responsible Block : Consolidated Controller| | | |
+Consolidated Commands to Brakes|[#H2] Not providing commands to brakes on ground (wont stop) | [#H1] Providing brakes when not commanded | [#H2] Commanding brakes too late (wont stop) | [#H31, #H41] Commanding brakes too long (can skid or lock)
+Consolidated steering commands|[#H5] Not providing steering on runway | [#H51] Providing steering when already on path | [#H51] Providing steering out of sync | [#H51] Providing steering too long
+Braking when not in Use (in U/C hold)|[#H61] Not providing brakes when unused | [#H1] Providing when in use (not in U/C hold) | [#H61] Providing out of sync | [#H4] Applying even after wheels stop spinning
+Arm the thrust reverse|[#H2] Not arming when commanded | [#H1] Arming when not commanded | [#H2] Arming delayed after commanded | [#H2] Not completing Arm in air
+Arm the Spoiler deployment|[#H2] Not arming when commanded | [#H1] Arming when not commanded | [#H2] Arming delayed from command | [#H2] Not completing Arm in air
+Responsible Block : Engine thrust reversal | | | |
+Thrust Reversal Deployment|[#H2] Not providing on touchdown | [#H1] Providing in Air  | [#H4] Providing too late after touchdown   | [#H2] Providing for a short duration (safe speed not reached)
+Thrust Reversal Deployment| | [#H5] Providing unequal |  | 
+Responsible Block : Aerodynamic brake| | | |
+Aerodynamic Brakes deployment |[#H2] Not providing on touchdown | [#H1] Providing in Air  | [#H4] Providing too late after touchdown   | [#H2] Providing for a short duration (safe speed not reached)
+Aerodynamic Brakes deployment | | [#H5] Providing unequal |  | 
+Responsible Block : Wheel brake controller | | | |
+Providing Brake Pressure |[#H2] Not providing when commanded | [#H1] Providing when not commanded | [#H4] Providing out of sync | [#H31] Applied too long 
+Providing Brake Pressure | | [#H41] Providing in air when in use | [#H41] Providing before touchdown | 
+Responsible Block : Nose Wheel Rudder| | | |
+Providing wheel Turn|[#H51] Not providing when not on center line | [#H51] Providing in air (lock) | [#H51] Providing out of sync | [#H51] Applied too long (stuck) 
+Providing rudder|[H51] Not providing when not on center line |  | [#H51] Providing out of sync | [#H51] Applied too long
+ 
+Make a table and provide constraints for the UCA(s)
+Responsible Block | Responsibility | UCA Number | UCA | Constraints
+Crew 1 | Pilot provides brake pedals| 1 | NP: [#H2]Not providing braking on ground  | 
+Crew 1 | Pilot provides brake pedals| 2 | P: [#H4] Providing brake in air | 
+Crew 1 | Pilot provides brake pedals| 3 | TE: [#H2] Providing brake too late on ground | 
+Crew 1 | Pilot provides brake pedals| 4 | S: [#H2] Stopping brake too soon | 
+Crew 1 | Pilot arms spoiler and reverse thrust| 5 | NP: [#H2] Not arming external system | 
+Crew 1 | Pilot arms spoiler and reverse thrust| 6 | P: [#H6] | 
+Crew 1 | Pilot arms spoiler and reverse thrust| 7 | TE: [#H2] Arms on ground | 
+Crew 1 | Pilot arms spoiler and reverse thrust| 8 | S: [#H2] Stops the arming process | 
+Crew 1 | Pilot provides steering commands| 9 | NP: [#H51] Not providing steering | 
+Crew 1 | Pilot provides steering commands| 10 | P: [#H51] Providing steering when not required | 
+Crew 1 | Pilot provides steering commands| 11 | TE: [#H51] Providing steering when aircraft has already gone off runway | 
+Crew 1 | Pilot provides steering commands| 12 | S: [#H51] Providing steering for a long duration cause deviation | 
+Crew 1 | Pilot provides parking/emergency brakes| 13 | NP: [#H2] Not providing emergency brake when brakes fail | 
+Crew 1 | Pilot provides parking/emergency brakes| 14 | P: [#H4] Providing emergency brake when brakes are okay - wet runway | 
+Crew 1 | Pilot provides parking/emergency brakes| 15 | TE: [#H2] Appying emergency brake brakes when runway wet cause skid | 
+Crew 1 | Pilot provides parking/emergency brakes| 16 | S: [#H5, #H6] Applied emergency brake too long | 
+Crew 2 | CO Pilot provides brake pedals| 17 | NP: [#H2]Not providing braking on ground  | 
+Crew 2 | CO Pilot provides brake pedals| 18 | P: [#H4] Providing brake in air | 
+Crew 2 | CO Pilot provides brake pedals| 19 | TE: [#H2] Providing brake too late on ground | 
+Crew 2 | CO Pilot provides brake pedals| 20 | S: [#H2] Stopping brake too soon | 
+Crew 2 | CO Pilot arms spoiler and reverse thrust| 21 | NP: [#H2] Not arming external system | 
+Crew 2 | CO Pilot arms spoiler and reverse thrust| 22 | P: [#H4] | 
+Crew 2 | CO Pilot arms spoiler and reverse thrust| 23 | TE: [#H2] Arms on ground | 
+Crew 2 | CO Pilot arms spoiler and reverse thrust| 24 | S: [#H2] Stops the arming process | 
+Crew 2 | CO Pilot provides steering commands| 25 | NP: [#H51] Not providing steering | 
+Crew 2 | CO Pilot provides steering commands| 26 | P: [#H51] Providing steering when not required | 
+Crew 2 | CO Pilot provides steering commands| 27 | TE: [#H51] Providing steering when aircraft has already gone off runway | 
+Crew 2 | CO Pilot provides steering commands| 28 | S: [#H51] Providing steering for a long duration cause deviation | 
+Crew 2 | CO Pilot provides parking/emergency brakes| 29 | NP: [#H2] Not providing emergency brake when brakes fail | 
+Crew 2 | CO Pilot provides parking/emergency brakes| 30 | P: [#H4] Providing emergency brake when brakes are okay - wet runway | 
+Crew 2 | CO Pilot provides parking/emergency brakes| 31 | TE: [#H2] Appying emergency brake brakes when runway wet cause skid | 
+Crew 2 | CO Pilot provides parking/emergency brakes| 32 | S: [#H5, #H6] Applied emergency brake too long | 
+Consolidated Controller | Consolidated Commands to Brakes| 33 | NP: [#H2] Not providing commands to brakes on ground (wont stop) | 
+Consolidated Controller | Consolidated Commands to Brakes| 34 | P: [#H1] Providing brakes when not commanded | 
+Consolidated Controller | Consolidated Commands to Brakes| 35 | TE: [#H2] Commanding brakes too late (wont stop) | 
+Consolidated Controller | Consolidated Commands to Brakes| 36 | S: [#H31, #H41] Commanding brakes too long (can skid or lock) | 
+Consolidated Controller | Consolidated steering commands| 37 | NP: [#H5] Not providing steering on runway | 
+Consolidated Controller | Consolidated steering commands| 38 | P: [#H51] Providing steering when already on path | 
+Consolidated Controller | Consolidated steering commands| 39 | TE: [#H51] Providing steering out of sync | 
+Consolidated Controller | Consolidated steering commands| 40 | S: [#H51] Providing steering too long | 
+Consolidated Controller | Braking when not in Use (in U/C hold)| 41 | NP: [#H61] Not providing brakes when unused | 
+Consolidated Controller | Braking when not in Use (in U/C hold)| 42 | P: [#H1] Providing when in use (not in U/C hold) | 
+Consolidated Controller | Braking when not in Use (in U/C hold)| 43 | TE: [#H61] Providing out of sync | 
+Consolidated Controller | Braking when not in Use (in U/C hold)| 44 | S: [#H4] Applying even after wheels stop spinning | 
+Consolidated Controller | Arm the thrust reverse| 45 | NP: [#H2] Not arming when commanded | 
+Consolidated Controller | Arm the thrust reverse| 46 | P: [#H1] Arming when not commanded | 
+Consolidated Controller | Arm the thrust reverse| 47 | TE: [#H2] Arming delayed after commanded | 
+Consolidated Controller | Arm the thrust reverse| 48 | S: [#H2] Not completing Arm in air | 
+Consolidated Controller | Arm the Spoiler deployment| 49 | NP: [#H2] Not arming when commanded | 
+Consolidated Controller | Arm the Spoiler deployment| 50 | P: [#H1] Arming when not commanded | 
+Consolidated Controller | Arm the Spoiler deployment| 51 | TE: [#H2] Arming delayed from command | 
+Consolidated Controller | Arm the Spoiler deployment| 52 | S: [#H2] Not completing Arm in air | 
+Engine thrust reversal  | Thrust Reversal Deployment| 53 | NP: [#H2] Not providing on touchdown | 
+Engine thrust reversal  | Thrust Reversal Deployment| 54 | P: [#H1] Providing in Air  | 
+Engine thrust reversal  | Thrust Reversal Deployment| 55 | TE: [#H4] Providing too late after touchdown   | 
+Engine thrust reversal  | Thrust Reversal Deployment| 56 | S: [#H2] Providing for a short duration (safe speed not reached) | 
+Engine thrust reversal  | Thrust Reversal Deployment| 57 | P: [#H5] Providing unequal | 
+Aerodynamic brake | Aerodynamic Brakes deployment | 58 | NP: [#H2] Not providing on touchdown | 
+Aerodynamic brake | Aerodynamic Brakes deployment | 59 | P: [#H1] Providing in Air  | 
+Aerodynamic brake | Aerodynamic Brakes deployment | 60 | TE: [#H4] Providing too late after touchdown   | 
+Aerodynamic brake | Aerodynamic Brakes deployment | 61 | S: [#H2] Providing for a short duration (safe speed not reached) | 
+Aerodynamic brake | Aerodynamic Brakes deployment | 62 | P: [#H5] Providing unequal | 
+Wheel brake controller  | Providing Brake Pressure | 63 | NP: [#H2] Not providing when commanded | 
+Wheel brake controller  | Providing Brake Pressure | 64 | P: [#H1] Providing when not commanded | 
+Wheel brake controller  | Providing Brake Pressure | 65 | TE: [#H4] Providing out of sync | 
+Wheel brake controller  | Providing Brake Pressure | 66 | S: [#H31] Applied too long  | 
+Wheel brake controller  | Providing Brake Pressure | 67 | P: [#H41] Providing in air when in use | 
+Wheel brake controller  | Providing Brake Pressure | 68 | TE: [#H41] Providing before touchdown | 
+Nose Wheel Rudder | Providing wheel Turn| 69 | NP: [#H51] Not providing when not on center line | 
+Nose Wheel Rudder | Providing wheel Turn| 70 | P: [#H51] Providing in air (lock) | 
+Nose Wheel Rudder | Providing wheel Turn| 71 | TE: [#H51] Providing out of sync | 
+Nose Wheel Rudder | Providing wheel Turn| 72 | S: [#H51] Applied too long (stuck)  | 
+Nose Wheel Rudder | Providing rudder| 73 | NP: [H51] Not providing when not on center line | 
+Nose Wheel Rudder | Providing rudder| 74 | TE: [#H51] Providing out of sync | 
+Nose Wheel Rudder | Providing rudder| 75 | S: [#H51] Applied too long | 

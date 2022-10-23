@@ -1,0 +1,24 @@
+MOOSE : Matlab Tool for STPA Evaluation
+ 
+Report created on : 09-Oct-2022 09:48:16
+ 
+Table 1: The Losses identified are
+Loss | Description
+Loss 01 | Loss of life
+Loss 02 | Loss of property
+Loss 03 | Loss of reputation
+Loss 04 | Loss of money
+ 
+Table 2: The Hazards identified are
+Loss | Hazard | Sub Hazard | Description | Constraint
+Loss 02, Loss 03|Hazard 01| | Deceleration when supposed  to be accelerating  |
+Loss 01, Loss 02, Loss 03|Hazard 02| | Acceleration when supposed  to be decelerating  |
+Loss 01, Loss 02, Loss 04|Hazard 03| | Fire on board the aircraft  |
+| | Hazard 031|Wheels are hot
+Loss 03, Loss 04|Hazard 04| | Excessive wear and tear  of system components  |
+| | Hazard 041|Tyres exploding
+Loss 04, Loss 02, Loss 01|Hazard 05| | Damage to surrounding  property life |
+| | Hazard 051|Aircarft leaving designated  path on ground
+Loss 04, Loss 02, Loss 01|Hazard 06| | Structural damage  to Aircraft  |
+| | Hazard 061|Wheels rotating  inside U/C hold
+Loss 04, Loss 03|Hazard 07| | Very high cost of development  maintenance and operation |
